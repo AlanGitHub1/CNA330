@@ -113,4 +113,4 @@ def main():
         jobhunt(arg_dict)
         time.sleep(3600) # Sleep for 1h
     if __name__ == '__main__':
-(main)
+        main()
