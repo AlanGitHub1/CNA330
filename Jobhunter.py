@@ -1,6 +1,7 @@
 # This script pulls from a job website and stores positions into a database. If there is a new posting it notifies the user.
 # CNA 330
-# Zachary Rubin, zrubin@rtc.edu
+# Alan Abdullah aaabdullah@student.rtc.edu
+
 import mysql.connector
 import sys
 import json
@@ -19,16 +20,16 @@ def connect_to_sql():
 # Create the table structure
 def create_tables(cursor, table):
     ## Add your code here. Starter code below
-    cursor.execute('''CREATE TABLE IF NOT EXISTS Table "jobhunter {
- ID INTEGER PRIMARY KEY AUTOINCREMENT,"
- "Type varchar"
- "Title varchar"
- "Description text"
- "Job_id varchar"
- "Created_at DATE"
- "Company varchar"
- "Location varchar"
- "How_to_apply varchar"
+    cursor.execute('''CREATE TABLE IF NOT EXISTS Table jobhunter {
+ ID INTEGER PRIMARY KEY AUTOINCREMENT,
+ Type varchar
+ Title varchar
+ Description text
+ Job_id varchar
+ Created_at DATE
+ Company varchar
+ Location varchar
+ How_to_apply varchar
 }
     return
 
@@ -41,7 +42,7 @@ def query_sql(cursor, query):
 # Add a new job
 def add_new_job(cursor, jobdetails):
     ## Add your code here
-    query = "INSERT INTO jobhunter (ID, Type, Title,Description, Job_id, Created_at, Company, Location, How-to_apply ) VALUES (1, "IT", "system admin", "")
+    query = "INSERT INTO jobhunter (ID, Type, Title,Description, Job_id, Created_at, Company, Location, How-to_apply ) VALUES (1, "IT", "system admin", "any", "Oct 23 2019", "any", "Everett", "Online app")
     return query_sql(cursor, query)
 
 # Check if new job
